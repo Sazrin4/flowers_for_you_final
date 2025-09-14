@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Only For You</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: radial-gradient(circle, #fdf6f6, #f9d1d1);
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff3399;
+      margin: 20px 0 30px;
+      border-right: 3px solid #ff3399;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(20,end) forwards, blink .7s step-end infinite alternate;
+    }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { 50% { border-color: transparent } }
+
+    .garden {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 28px;
+      width: 90%;
+      max-width: 720px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .flower { position: relative; width: 120px; height: 120px; }
+
+    /* Pink flower */
+    .pink .petal { position: absolute; width: 72px; height: 108px; background: radial-gradient(circle at 30% 30%, #ff66b2, #ff3385); border-radius: 50%; top: 12px; left: 24px; transform-origin: bottom center; animation: openClose 4s ease-in-out infinite; }
+    .pink .petal:nth-child(1){ transform: rotate(0deg) translateY(-54px); }
+    .pink .petal:nth-child(2){ transform: rotate(60deg) translateY(-54px); }
+    .pink .petal:nth-child(3){ transform: rotate(120deg) translateY(-54px); }
+    .pink .petal:nth-child(4){ transform: rotate(180deg) translateY(-54px); }
+    .pink .petal:nth-child(5){ transform: rotate(240deg) translateY(-54px); }
+    .pink .petal:nth-child(6){ transform: rotate(300deg) translateY(-54px); }
+    .pink .center{ position:absolute; top:50%; left:50%; width:48px; height:48px; background: radial-gradient(circle,#ffcc00,#cc9900); border-radius:50%; transform:translate(-50%,-50%); }
+
+    /* Rose */
+    .rose .petal{ position:absolute; width:84px; height:84px; background: radial-gradient(circle at 30% 30%, #cc0033,#990022); border-radius:50%; top:18px; left:18px; }
+    .rose .center{ position:absolute; width:36px; height:36px; background:#660011; border-radius:50%; top:42px; left:42px; }
+
+    /* Sunflower */
+    .sunflower .petal{ position:absolute; width:24px; height:72px; background: radial-gradient(circle at 30% 30%, #ffcc33,#ff9900); border-radius:50%; top:12px; left:48px; transform-origin:bottom center; }
+    .sunflower .center{ position:absolute; width:48px; height:48px; background: radial-gradient(circle,#663300,#331100); border-radius:50%; top:36px; left:36px; z-index:2; }
+
+    /* Tulip */
+    .tulip .petal{ position:absolute; width:72px; height:96px; background: radial-gradient(circle at 30% 30%, #ff66cc,#cc3399); border-radius:60% 60% 40% 40%; top:24px; left:24px; }
+    .tulip .petal:nth-child(2){ left:14px; transform:rotate(-10deg); }
+    .tulip .petal:nth-child(3){ left:34px; transform:rotate(10deg); }
+
+    @keyframes openClose{ 0%,100%{transform:scaleY(1);} 50%{
