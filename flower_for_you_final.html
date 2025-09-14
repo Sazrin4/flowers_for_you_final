@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Only For You</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: radial-gradient(circle, #fdf6f6, #f9d1d1);
+      font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff3399;
+      text-shadow: 2px 2px 8px rgba(255, 100, 150, 0.6);
+      margin-bottom: 40px;
+      border-right: 3px solid #ff3399;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(20, end) forwards, blink 0.7s step-end infinite alternate, glow 2s ease-in-out 4s infinite alternate;
+    }
+
+    @keyframes typing { from { width: 0; } to { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc, 0 0 20px #ff3399; }
+      100% { text-shadow: 0 0 15px #ff99cc, 0 0 25px #ff3399, 0 0 40px #ff0066; }
+    }
+
+    .garden { display: grid; grid-template-columns: repeat(auto-fill, 150px); gap: 40px; }
+    .flower { position: relative; width: 100px; height: 100px; }
+
+    /* Flower animations (same as before) */
+    .pink .petal { position: absolute; width: 60px; height: 90px; background: radial-gradient(circle at 30% 30%, #ff66b2, #ff3385); border-radius: 50%; top: 10px; left: 20px; transform-origin: bottom center; animation: openClose 4s ease-in-out infinite; }
+    .pink .petal:nth-child(1) { transform: rotate(0deg) translateY(-45px); }
+    .pink .petal:nth-child(2) { transform: rotate(60deg) translateY(-45px); }
+    .pink .petal:nth-child(3) { transform: rotate(120deg) translateY(-45px); }
+    .pink .petal:nth-child(4) { transform: rotate(180deg) translateY(-45px); }
+    .pink .petal:nth-child(5) { transform: rotate(240deg) translateY(-45px); }
+    .pink .petal:nth-child(6) { transform: rotate(300deg) translateY(-45px); }
+    .pink .center { position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; background: radial-gradient(circle, #ffcc00, #cc9900); border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 20px rgba(255,200,0,0.7); animation: pulse 2s ease-in-out infinite; }
+
+    .rose .petal { position: absolute; width: 70px; height: 70px; background: radial-gradient(circle at 30% 30%, #cc0033, #990022); border-radius: 50%; top: 15px; left: 15px; animation: bloom 6s ease-in-out infinite alternate; }
+    .rose .center { position: absolute; width: 30px; height: 30px; background: #660011; border-radius: 50%; top: 35px; left: 35px; }
+
+    .sunflower .petal { position: absolute; width: 20px; height: 60px; background: radial-gradient(circle at 30% 30%, #ffcc33, #ff9900); border-radius: 50%; top: 10px; left: 40px; transform-origin: bottom center; }
+    .sunflower .center { position: absolute; width: 40px; height: 40px; background: radial-gradient(circle, #663300, #331100); border-radius: 50%; top: 30px; left: 30px; z-index: 2; }
+    .sunflower { animation: spin 12s linear infinite; }
+
+    .tulip .petal { position: absolute; width: 60px; height: 80px; background: radial-gradient(circle at 30% 30%, #ff66cc, #cc3399); border-radius: 60% 60% 40% 40%; top: 20px; left: 20px; }
+    .tulip .petal:nth-child(2) { left: 10px; transform: rotate(-10deg); }
+    .tulip .petal:nth-child(3) { left: 30px; transform: rotate(10deg); }
+    .tulip { animation: sway 3s ease-in-out infinite alternate; }
+
+    @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.1);} }
+    @keyframes openClose { 0%,100%{transform:scaleY(1);} 50%{transform:scaleY(0.7);} }
+    @keyframes bloom { 0%{transform:scale(0.8);opacity:0.7;} 100%{transform:scale(1.2);opacity:1;} }
+    @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+    @keyframes sway { 0%{transform:rotate(-5deg);} 100%{transform:rotate(5deg);} }
+
+    .music { margin-top: 40px; text-align: center; }
+    button { padding: 8px 16px; margin: 5px; border: none; border-radius: 8px; background: #ff66b2; color: white; cursor: pointer; font-size: 1em; }
+    button:hover { background: #ff3385; }
+  </style>
+</head>
+<body>
+  <h1>🌸 Thank You 🌸</h1>
+  <div class="garden">
+    <div class="flower pink"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div></div>
+    <div class="flower rose"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div></div>
+    <div class="flower sunflower"><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="center"></div></div>
+    <div class="flower tulip"><div class="petal"></div><div class="petal"></div><div class="petal"></div></div>
+  </div>
+
+  <div class="music">
+    <div>
+      <button onclick="playSong('ocean')">🎶 Ocean Eyes</button>
+      <button onclick="playSong('wild')">🌼 Wildflowers</button>
+    </div>
+    <iframe id="musicFrame" width="300" height="80" 
+            src="https://www.youtube.com/embed/viimfQi_pUw?autoplay=1&loop=1&playlist=viimfQi_pUw"
+            title="Music Player"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function playSong(type) {
+      let frame = document.getElementById("musicFrame");
+      if(type === "ocean") {
+        frame.src = "https://www.youtube.com/embed/viimfQi_pUw?autoplay=1&loop=1&playlist=viimfQi_pUw";
+      } else {
+        frame.src = "https://www.youtube.com/embed/TL8Y6W-0Ckc?autoplay=1&loop=1&playlist=TL8Y6W-0Ckc"; // Wildflowers cover
+      }
+    }
+  </script>
+</body>
+</html>
